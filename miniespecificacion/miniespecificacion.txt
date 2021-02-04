@@ -2,58 +2,54 @@
 2.  funcion principal()
 3.      opcion, [i-0]
 4.      banderaPrincipal, True
-5.      banderaDos, True
-6.      Haga Hasta 
-7.      contador, [i-0] = 0
-8.      opcion2, x(100) [{A-Z}, {a-z}]
-9.      Escribir ¨Ingrese cualquiera de las opciones para crear una cuenta: \n¨
-10.      Escribir ¨Ingrese 1 para crear una cuenta en Facebook: \n
-11.                Ingrese 2 para crear una cuenta en Whatsapp: \n
-12.                Ingrese 3 para crear una cuenta en Telegram: \n
-13.                Ingrese 4 para crear una cuenta en Signal: \n
-14.                Ingrese 5 para crear una cuenta en Instagram: \n
-15.                Ingrese 6 para crear una cuenta en Flickr: \n
-16.      leer opcion
-17.      Dependiendo de
-18.        opcion = 1
-19.            crearFacebook()
-20.        Fin
-21.        opcion = 2
-22.            crearWhatsapp()
-23.        Fin
-24.        opcion = 3
-25.            crearTelegram()
-26.        Fin
-27.        opcion = 4
-28.            crearSignal()
+5.      Haga Hasta 
+6.      contador, [i-0] = 0
+7.      opcion2, x(100) [{A-Z}, {a-z}]
+8.      Escribir ¨Ingrese cualquiera de las opciones para crear una cuenta: \n¨
+9.      Escribir ¨Ingrese 1 para crear una cuenta en Facebook: \n
+10.                Ingrese 2 para crear una cuenta en Whatsapp: \n
+11.                Ingrese 3 para crear una cuenta en Telegram: \n
+12.                Ingrese 4 para crear una cuenta en Signal: \n
+13.                Ingrese 5 para crear una cuenta en Instagram: \n
+14.                Ingrese 6 para crear una cuenta en Flickr: \n
+15.      leer opcion
+16.      Dependiendo de
+17.        opcion  1
+18.            crearFacebook()
 29.        Fin
-30.        opcion = 5
-31.            crearInstagram()
-32.        Fin
-33.        opcion = 6
-34.            crearFlickr()
-35.        Fin
-36.        Default
-37.               Escribir ¨Error, intete colocar los numero presentados¨ 
-38.      Fin dependiendo de
-39.      Haga Hasta
+20.        opcion  2
+21.            crearWhatsapp()
+22.        Fin
+23.        opcion  3
+24.            crearTelegram()
+25.        Fin
+26.        opcion  4
+27.            crearSignal()
+28.        Fin
+29.        opcion  5
+30.            crearInstagram()
+31.        Fin
+32.        opcion  6
+33.            crearFlickr()
+34.        Fin
+35.        Default
+36.               Escribir ¨Error, intete colocar los numero presentados¨
+38.                 contador = contador - 1 
+39.      Fin dependiendo de
 40.      Escribir ¨Ingrese si para seguir creando cuentas: \n
 41.                Ingrese no para dejar de crear cuentas: \n"                          
 42.      leer opcion2                    
 43.      Dependiendo de              
-44.        opcion2 = si
-45.            banderaDos = False
+44.        opcion2  si
 46.            contador= contador + 1
 47.        Fin
-48.        opcion2 = no
+48.        opcion2  no
 49.            banderaPrincipal = False
-50.            banderaDos = False 
 51.            mensajefinal = obtenerMensaje(contador)  
 52.            Escribir mensajefinal    
 53.        Fin
 54.        Default
 55.               Escribir ¨Error, intete colocar una de las palabras presentadas¨ 
-56.      Fin_Haga Hasta (banderaDos)
 57.      Fin_Haga Hasta (banderaPrincipal)     
 58.  fin funcion principal 
 59.  funcion crearFacebook()
@@ -173,21 +169,20 @@
 168.                ,nombre,correo)
 169.  fin funcion crearFlickr()
 
-170.  funcion obtenerMensaje(contador)
+170.  funcion obtenerMensaje(i,contador)
 171.      (mensajeFinal(3),x(300)[{a-z}, {A-Z}, {BS}])
 172.      mensajeFinal <-- {"Campaña con poca afluencia", "Campaña moderada siga adelante", "Excelente campaña"}
-173.      Si(contador >= 1 OR contador <= 5) entonces
+173.      Si(contador >= 1 AND contador <= 5) entonces
 174.        Escribir mensajeFinal[0]   
-175.      de lo contraio 
-176.        Si(contador >= 6 OR contador <= 15)
-177.          Escribir mensajeFinal[1]
-178.        de lo contraio
-179.          Si (contador <= 16)
-180.             Escribir mensajeFinal[2]
-181.          Fin_Si
-182.        Fin_Si
-183.      Fin_Si
-184,  return mensajeFinal
-185.  fin funcion obtenerMensaje()
-186.Fin
+175.          cadena <-- mensajeFinal[0]
+176.         Si(contador >= 6 AND contador <= 15)]
+177.            cadena <-- mensajeFinal[1]
+178.          Si (contador <= 16)
+179.             cadena <-- mensajeFinal[2]          
+180.          Fin_Si
+181.        Fin_Si
+182.      Fin_Si
+182.  retorna cadena
+183.  fin funcion obtenerMensaje()
+184.Fin
 
